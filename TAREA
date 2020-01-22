@@ -1,0 +1,268 @@
+										/*EJERCICIO N1*/
+USE master
+GO
+CREATE LOGIN QChunga WITH PASSWORD='987654321', DEFAULT_DATABASE=Northwind, CHECK_EXPIRATION=OFF, CHECK_POLICY=OFF
+GO
+ALTER SERVER ROLE sysadmin ADD MEMBER QChunga
+GO
+USE Northwind
+GO
+CREATE USER QChunga FOR LOGIN QChunga
+GO
+
+
+										/*EJERCICIO 2*/
+USE master
+GO
+CREATE LOGIN afuller WITH PASSWORD='987654321', DEFAULT_DATABASE=Northwind, CHECK_EXPIRATION=OFF, CHECK_POLICY=OFF
+GO
+
+USE Northwind
+GO
+CREATE USER afuller FOR LOGIN afuller
+GO
+
+use Northwind
+GO
+GRANT UPDATE ON Employees TO afuller
+GRANT DELETE ON Employees TO afuller
+GRANT INSERT ON Employees TO afuller
+GRANT SELECT ON Employees TO afuller
+GO
+
+
+use Northwind
+GO
+GRANT SELECT ON Orders TO afuller
+GO
+
+
+										/*EJERCICIO 3*/
+
+USE master
+GO
+CREATE LOGIN jleverling WITH PASSWORD='987654321', DEFAULT_DATABASE=Northwind, CHECK_EXPIRATION=OFF, CHECK_POLICY=OFF
+GO
+USE Northwind
+GO
+CREATE USER jleverling FOR LOGIN jleverling
+GO
+
+
+USE master
+GO
+CREATE LOGIN mpeacock WITH PASSWORD='987654321', DEFAULT_DATABASE=Northwind, CHECK_EXPIRATION=OFF, CHECK_POLICY=OFF
+GO
+USE Northwind
+GO
+CREATE USER mpeacock FOR LOGIN mpeacock
+GO
+
+
+use Northwind
+GO
+GRANT UPDATE ON Orders TO jleverling
+GRANT DELETE ON Orders TO jleverling
+GRANT INSERT ON Orders TO jleverling
+GO
+
+use Northwind
+GO
+GRANT UPDATE ON Orders TO mpeacock
+GRANT DELETE ON Orders TO mpeacock
+GRANT INSERT ON Orders TO mpeacock
+GO
+
+
+								/*EJERCICIO 4*/
+
+USE master
+GO
+CREATE LOGIN sbuchanan WITH PASSWORD='987654321', DEFAULT_DATABASE=Northwind, CHECK_EXPIRATION=OFF, CHECK_POLICY=OFF
+GO
+USE Northwind
+GO
+CREATE USER sbuchanan FOR LOGIN sbuchanan
+GO
+
+
+use Northwind
+GO
+
+GRANT INSERT ON Products TO sbuchanan
+GRANT UPDATE ON Products TO sbuchanan
+GRANT DELETE ON Products TO sbuchanan
+GRANT SELECT ON Products TO sbuchanan
+GO
+
+
+------------------EJERCICIO 5------------------
+--USUARIOS
+USE master
+GO
+CREATE LOGIN msuyama WITH PASSWORD='987654321', DEFAULT_DATABASE=Northwind, CHECK_EXPIRATION=OFF, CHECK_POLICY=OFF
+GO
+USE Northwind
+GO
+CREATE USER msuyama FOR LOGIN msuyama
+GO
+
+USE master
+GO
+CREATE LOGIN rking WITH PASSWORD='987654321', DEFAULT_DATABASE=Northwind, CHECK_EXPIRATION=OFF, CHECK_POLICY=OFF
+GO
+USE Northwind
+GO
+CREATE USER rking FOR LOGIN rking
+GO
+
+USE master
+GO
+CREATE LOGIN adodsworth WITH PASSWORD='987654321', DEFAULT_DATABASE=Northwind, CHECK_EXPIRATION=OFF, CHECK_POLICY=OFF
+GO
+USE Northwind
+GO
+CREATE USER adodsworth FOR LOGIN adodsworth
+GO
+
+use Northwind
+GO
+GRANT UPDATE ON Orders TO adodsworth
+GRANT INSERT ON Orders TO adodsworth
+GO
+
+use Northwind
+GO
+GRANT UPDATE ON Orders TO msuyama
+GRANT INSERT ON Orders TO msuyama
+GO
+
+use Northwind
+GO
+GRANT UPDATE ON Orders TO rking
+GRANT INSERT ON Orders TO rking
+GO
+
+
+use Northwind
+GO
+GRANT DELETE ON Orders TO sbuchanan
+GO
+
+
+use Northwind
+GO
+GRANT UPDATE ON Customers TO adodsworth
+GRANT INSERT ON Customers TO adodsworth
+GO
+
+use Northwind
+GO
+GRANT UPDATE ON Customers TO msuyama
+GRANT INSERT ON Customers TO msuyama
+GO
+
+use Northwind
+GO
+GRANT UPDATE ON Customers TO rking
+GRANT INSERT ON Customers TO rking
+GO
+
+
+
+									     /*EJERCICIO 6*/
+
+USE master
+GO
+CREATE LOGIN lcallahan WITH PASSWORD='987654321', DEFAULT_DATABASE=Northwind, CHECK_EXPIRATION=OFF, CHECK_POLICY=OFF
+GO
+USE Northwind
+GO
+CREATE USER lcallahan FOR LOGIN lcallahan
+GO
+
+use Northwind
+GO
+GRANT UPDATE ON Products TO lcallahan
+GRANT DELETE ON Products TO lcallahan
+GRANT INSERT ON Products TO lcallahan
+GRANT SELECT ON Products TO lcallahan
+GO
+
+
+use Northwind
+GO
+GRANT UPDATE ON Shippers TO lcallahan
+GRANT DELETE ON Shippers TO lcallahan
+GRANT INSERT ON Shippers TO lcallahan
+GRANT SELECT ON Shippers TO lcallahan
+GO
+
+
+                                          /*EJERCICIO 7*/
+
+USE master
+GO
+CREATE LOGIN uperez WITH PASSWORD='987654321', DEFAULT_DATABASE=Northwind, CHECK_EXPIRATION=OFF, CHECK_POLICY=OFF
+GO
+USE Northwind
+GO
+CREATE USER uperez FOR LOGIN uperez
+GO
+
+USE master
+GO
+CREATE LOGIN gsmith WITH PASSWORD='987654321', DEFAULT_DATABASE=Northwind, CHECK_EXPIRATION=OFF, CHECK_POLICY=OFF
+GO
+USE Northwind
+GO
+CREATE USER gsmith FOR LOGIN gsmith
+GO
+
+USE master
+GO
+CREATE LOGIN pvannels WITH PASSWORD='987654321', DEFAULT_DATABASE=Northwind, CHECK_EXPIRATION=OFF, CHECK_POLICY=OFF
+GO
+USE Northwind
+GO
+CREATE USER pvannels FOR LOGIN pvannels
+GO
+
+USE master
+GO
+CREATE LOGIN pmartinez WITH PASSWORD='987654321', DEFAULT_DATABASE=Northwind, CHECK_EXPIRATION=OFF, CHECK_POLICY=OFF
+GO
+USE Northwind
+GO
+CREATE USER pmartinez FOR LOGIN pmartinez
+GO
+
+use Northwind
+GO
+GRANT INSERT ON Orders TO gsmith
+GRANT UPDATE ON Orders TO gsmith
+GRANT DELETE ON Orders TO gsmith
+
+GO
+
+use Northwind
+GO
+GRANT INSERT ON Orders TO pmartinez
+GRANT UPDATE ON Orders TO pmartinez
+GRANT DELETE ON Orders TO pmartinez
+
+GO
+
+use Northwind
+GO
+GRANT UPDATE ON Orders TO pvannels
+GRANT DELETE ON Orders TO pvannels
+GRANT INSERT ON Orders TO pvannels
+GO
+
+use Northwind
+GO
+GRANT UPDATE ON Orders TO uperez
+GRANT DELETE ON Orders TO uperez
+GRANT INSERT ON Orders TO uperez
+GO
